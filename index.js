@@ -60,10 +60,10 @@ document.addEventListener("click", function(event){
             infoDiv.innerHTML = `<p class="not-cat"> Here is a list of all your matches so far: <br> </p>
             ${likedArray}
             <br><br><br>
-            <p class="not-cat"> Click on the <img id="paw-icon-chat" src="/images/utils/paw-icon.png"/> icon to see if there are any other dogs in your area.</p>`
+            <p class="not-cat"> Click on the <img id="paw-icon-chat" src="images/utils/paw-icon.png"/> icon to see if there are any other dogs in your area.</p>`
         } else {
             infoDiv.innerHTML = `<p class="not-cat">You have no matches so far. 
-            <p class="not-cat"> Click on the <img id="paw-icon-chat" src="/images/utils/paw-icon.png"/> icon to see if there are any other dogs in your area.</p>
+            <p class="not-cat"> Click on the <img id="paw-icon-chat" src="images/utils/paw-icon.png"/> icon to see if there are any other dogs in your area.</p>
             <br> <p class="not-cat"> If there are no more dogs, then lower your expectations next time!</p>`
         }
     }
@@ -97,7 +97,7 @@ function renderTutorialLike() {
 
     buttons.namedItem("like").disabled = false
     infoDiv.innerHTML = `
-    <p id="how-to-like">Press <img id="like-tutorial" src="/images/utils/like-icon.png"/> to LIKE a dog. <br><br>
+    <p id="how-to-like">Press <img id="like-tutorial" src="images/utils/like-icon.png"/> to LIKE a dog. <br><br>
     It will only be a Match if you both Like each other. <br><br>
     Try it out!</p>
     ${new Dog(fakeDogsData[0]).getDogHtml()}`
@@ -108,7 +108,7 @@ function likeDog() {
 
     if (fakeDogsData.length > 0 && !isSkipped) {
         buttons.namedItem("like").disabled = true
-        document.getElementsByClassName("dog-card")[0].innerHTML += `<input id="like-image" type="image" src="/images/utils/like-image.png" />`
+        document.getElementsByClassName("dog-card")[0].innerHTML += `<input id="like-image" type="image" src="images/utils/like-image.png" />`
         setTimeout(() => {
             buttons.namedItem("nope").disabled = false
             renderTutorialNope()
@@ -116,7 +116,7 @@ function likeDog() {
         return
     }
 
-    document.getElementsByClassName("dog-card")[0].innerHTML += `<input id="like-image" type="image" src="/images/utils/like-image.png" />`
+    document.getElementsByClassName("dog-card")[0].innerHTML += `<input id="like-image" type="image" src="images/utils/like-image.png" />`
     buttons.namedItem("like").disabled = true
     buttons.namedItem("nope").disabled = true
 
@@ -131,7 +131,7 @@ function likeDog() {
 function renderTutorialNope() {
 
     infoDiv.innerHTML = `
-    <p id="how-to-nope">Press <img id="nope-tutorial" src="/images/utils/nope-icon.png"/> if you don't like a dog.</p>
+    <p id="how-to-nope">Press <img id="nope-tutorial" src="images/utils/nope-icon.png"/> if you don't like a dog.</p>
     ${new Dog(fakeDogsData[0]).getDogHtml()}`
     fakeDogsData.shift()
 
@@ -141,7 +141,7 @@ function nopeDog() {
 
     if (fakeDogsData.length > 0 && !isSkipped)  {
         buttons.namedItem("nope").disabled = true
-        document.getElementsByClassName("dog-card")[0].innerHTML += `<input id="nope-image" type="image" src="/images/utils/nope-image.png" />`
+        document.getElementsByClassName("dog-card")[0].innerHTML += `<input id="nope-image" type="image" src="images/utils/nope-image.png" />`
         setTimeout(() => {
             renderPicture()
         }, 1000)
@@ -149,7 +149,7 @@ function nopeDog() {
         return
     }
 
-    document.getElementsByClassName("dog-card")[0].innerHTML += `<input id="nope-image" type="image" src="/images/utils/nope-image.png" />`
+    document.getElementsByClassName("dog-card")[0].innerHTML += `<input id="nope-image" type="image" src="images/utils/nope-image.png" />`
     buttons.namedItem("like").disabled = true
     buttons.namedItem("nope").disabled = true
     setTimeout(() => {
@@ -183,7 +183,8 @@ function renderDog() {
     }
     else { 
 
-        infoDiv.innerHTML= `<p class="not-cat">We've run out of potential matches in your area. <br> <br>Check your matches by clicking on the <img id="chat-img" src="/images/utils/chat-icon.png"/> icon.</p>`   
+        infoDiv.innerHTML= `<p class="not-cat">We've run out of potential matches in your area. <br> <br>Check your matches by clicking on the <img id="chat-img" 
+        src="images/utils/chat-icon.png"/> icon.</p>`   
     }
 }
 
@@ -207,7 +208,7 @@ function renderProfile() {
     buttons.namedItem("nope").disabled = true
     infoDiv.innerHTML = `
     <div id="profile-container"> 
-        <img id="profile-pic" src="/images/utils/profile-pic.jpg"/>
+        <img id="profile-pic" src="images/utils/profile-pic.jpg"/>
         <p id="profile-message">
             Hello Sir. <br> We regret to inform you that your account has been suspended. <br>
             We ban accounts when there has been a violation of our Terms of Use and/or Community Guidelines. <br>
